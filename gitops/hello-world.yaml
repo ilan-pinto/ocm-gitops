@@ -4,12 +4,13 @@ kind: Secret
 metadata:
   namespace: default
   name: quay
+  annotations:
+     tekton.dev/docker-0: quay.io
 data:
     .dockerconfigjson: >-
            eyJhdXRocyI6eyJxdWF5LmlvIjp7InVzZXJuYW1lIjoiaWxhbl9waW50byIsInBhc3N3b3JkIjoiYnA3MjAzMzkiLCJhdXRoIjoiYVd4aGJsOXdhVzUwYnpwaWNEY3lNRE16T1E9PSIsImVtYWlsIjoiIn19fQ==
 type: kubernetes.io/dockerconfigjson  
-annotations:
-     tekton.dev/docker-0: quay.io
+
 ---     
 apiVersion: v1
 kind: ServiceAccount
